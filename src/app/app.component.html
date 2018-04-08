@@ -4,21 +4,23 @@
   {{ title }}
 </h1>
 </header>
-<nav id="nav" class="col-lg-12"><br/>
+<nav id="nav" class="col-lg-12">
   <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Productos</a></li>
-    <li><a href="#">Crear Producto!</a></li>
+    <li><a [routerLink]="['/home']">Home</a></li>
+    <li><a [routerLink]="['/productos']">Productos</a></li>
+    <li><a [routerLink]="['/crearproductos']">Crear Producto</a></li>
   </ul>
 </nav>
 <section id="main" class="col-lg-12">
-  <h3>Texto principal</h3>
+  <router-outlet></router-outlet>>
 </section>
 
-<footer  class="col-lg-12">
+<footer id="footer" class="col-lg-12">
   <p>Curso de Angular 4</p>
 </footer>
 </div>
+
+
 
 
 
