@@ -6,19 +6,20 @@
 </header>
 <nav id="nav" class="col-lg-12">
   <ul>
-    <li><a [routerLink]="['/home']">Home</a></li>
-    <li><a [routerLink]="['/productos']">Productos</a></li>
-    <li><a [routerLink]="['/crearproductos']">Crear Producto</a></li>
+    <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a></li>
+    <li><a [routerLink]="['/productos']" [routerLinkActive]="['activado']">Productos</a></li>
+    <li><a [routerLink]="['/crearproductos']" [routerLinkActive]="['activado']">Crear Producto</a></li>
   </ul>
 </nav>
 <section id="main" class="col-lg-12">
-  <router-outlet></router-outlet>>
+  <router-outlet></router-outlet>
 </section>
 
 <footer id="footer" class="col-lg-12">
   <p>Curso de Angular 4</p>
 </footer>
 </div>
+
 
 
 

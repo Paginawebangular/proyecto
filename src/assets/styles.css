@@ -1,7 +1,7 @@
 #content{
     margin-top:30px;
     border:2px solid white;
-    border-radious: 2px;
+    border-radius: 2px;
     background: white;
     box-shadow: 0px 2px 3px gray;
     padding: 0px;
@@ -21,7 +21,7 @@
     line-height: 51px;
     font-weight: bold;
     font-size: 30px;
-}
+} 
 
 #nav {
     padding: 0px;
@@ -55,6 +55,13 @@
     background: #E03137;
 
 }
+
+.activado{
+    text-decoration: none !important;
+    border-bottom: 5px solid yellow !important;
+
+}
+
 
 #footer {
     margin-top: 50px;
