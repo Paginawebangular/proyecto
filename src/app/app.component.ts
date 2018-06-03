@@ -7,7 +7,7 @@ import { GLOBAL } from './services/global';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'Productos angular 5';
+  public title = 'CONCESIONARIO RODRIGUEZ';
   public header_color: string;
 
 constructor(){

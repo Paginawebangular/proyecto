@@ -8,7 +8,7 @@ export class HomeComponent{
     public titulo: string;
 
     constructor(){
-        this.titulo = "Webapp de productos con Angular 4";
+        this.titulo = "Webapp para ver los coches que tenemos en stock y añadir nuevos";
     }
     ngOnInitç(){
         console.log('Se ha cargado home.component.ts');

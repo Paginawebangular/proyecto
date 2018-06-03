@@ -7,4 +7,4 @@ export class Producto{
         public imagen: string
 
     ){}
-};
+}
