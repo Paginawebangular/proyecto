@@ -8,6 +8,7 @@ import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
+import { LoginComponent } from './components/login.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
 import { ProductoAddComponent } from './components/producto-add.component';
@@ -18,6 +19,7 @@ import { ProductoEditComponent } from './components/producto-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HomeComponent,
     ErrorComponent,
     ProductosListComponent,

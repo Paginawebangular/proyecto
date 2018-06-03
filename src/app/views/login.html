@@ -1,0 +1,15 @@
+<div class="col-lg-8 col-lg-offset-1">
+  <h1>Para realizar esta opcion debes estar registrado</h1>
+  <div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    
+    <div class="form-signin">
+      <input id="usuario" class="form-control" [(ngModel)]="usuario" placeholder="Usuario" required autofocus>
+      <input type="password" id="inputPassword" [(ngModel)]="pass" class="form-control" placeholder="Contraseña" required>
+      <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="login()">Entrar</button>
+      <span class="alert-danger" *ngIf="nologin" >*El usuario no es correcto</span>
+    </div>
+    
+  </div>
+</div>

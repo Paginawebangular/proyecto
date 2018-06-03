@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent{
     public titulo: string;
 
-    constructor(){
+    constructor() {
         this.titulo = "Webapp para ver los coches que tenemos en stock y añadir nuevos";
     }
-    ngOnInitç(){
+    ngOnInit () {
         console.log('Se ha cargado home.component.ts');
     }
 }
