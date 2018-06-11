@@ -30,7 +30,6 @@ export class ProductoAddComponent{
 	}
 
 	onSubmit(){
-		console.log(this.producto);
 
 		if(this.filesToUpload && this.filesToUpload.length >= 1){
 			this._productoService.makeFileRequest(GLOBAL .url+'upload-file', [], this.filesToUpload).then((result) => {

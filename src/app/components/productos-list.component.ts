@@ -12,6 +12,7 @@ export class ProductosListComponent{
 	public titulo: string;
 	public productos: Producto[];
 	public confirmado;
+	public esUser;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -20,11 +21,13 @@ export class ProductosListComponent{
 	){
 		this.titulo = 'Listado de coches';
 		this.confirmado = null;
+		this.esUser=false;
 	}
 
 	ngOnInit(){
 		console.log('productos-list.component.ts cargado');
 		this.getProductos();
+		this.comprobarUser();
 	}
 
 	getProductos(){
@@ -65,6 +68,15 @@ export class ProductosListComponent{
 				console.log(<any>error);
 			}
 		);
+	}
+
+	comprobarUser(){
+		const person = sessionStorage.getItem('puede');
+		if(person === "s"){
+			this.esUser=true;
+		}else{
+			this.esUser=false;
+		}
 	}
 
 }

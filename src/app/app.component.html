@@ -8,8 +8,11 @@
 <nav id="nav" class="col-lg-12">
   <ul>
     <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Inicio</a></li>
-    <li><a [routerLink]="['/login2']" [routerLinkActive]="['activado']">Nuestros coches</a></li>
-    <li><a [routerLink]="['/login']" [routerLinkActive]="['activado']">Añadir un coche</a></li>
+    <li><a [routerLink]="['/productos']" [routerLinkActive]="['activado']">Nuestros coches</a></li>
+    <li><a [routerLink]="['/crear-producto']" [routerLinkActive]="['activado']" *ngIf="esUsuario">Añadir un coche</a></li>
+    <li><a [routerLink]="['/login']" [routerLinkActive]="['activado']" *ngIf="!esUsuario">Iniciar sesion</a></li>
+    <li><a [routerLink]="['/registrar']" [routerLinkActive]="['activado']" *ngIf="esAdmin">Crear cuenta</a></li>
+    <li><a (click)="cerrar()" *ngIf="esUsuario" >Cerrar sesion </a></li>
   </ul>
 </nav>
 <section id="main" class="col-lg-12">

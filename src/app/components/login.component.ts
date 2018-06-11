@@ -4,10 +4,10 @@ import { ProductoService } from '../services/producto.service';
 
 @Component({
     selector: 'login',
-    templateUrl: '../views/login.html'
+    templateUrl: '../views/login.html',
+	providers: [ProductoService]
 })
 export class LoginComponent {
-    private _productoService: ProductoService;
     public usuario: string;
     public pass: string;
     public msgError: string;
@@ -15,7 +15,8 @@ export class LoginComponent {
     public nopass: boolean;
     public nologin: boolean;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, 
+        private _productoService: ProductoService) {
         this.usuario = '';
         this.pass = '';
         this.msgError = '';
@@ -25,6 +26,8 @@ export class LoginComponent {
     }
 
     login() {
+        this.nopass = false;
+        this.nouser = false;
         let usuTrue, passTrue;
 
         this.usuario === '' || this.usuario === undefined ? usuTrue = false : usuTrue = true;
@@ -32,12 +35,12 @@ export class LoginComponent {
 
 
         if (usuTrue && passTrue) {
-            console.log('aa');
-            this._productoService.getProducto(this.usuario).subscribe(
+            this._productoService.getUser(this.usuario).subscribe(
                 response => {
                     if (response.status === 'success') {
                         if (response.data.pass === this.pass) {
-                            this.router.navigate(['/crear-producto']);
+                            location.href=location.href;
+                            sessionStorage.setItem('usu', this.usuario);                           
                         } else {
                             this.nopass = true;
                         }
@@ -53,11 +56,9 @@ export class LoginComponent {
         } else {
             this.nologin = true;
         }
+        this.router.navigate(['/home']); 
     }
 
-    registrar() {
-        this.router.navigate(['/registrar']);
-    }
 }
 
 

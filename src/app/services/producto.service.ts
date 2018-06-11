@@ -72,13 +72,17 @@ export class ProductoService {
 
 
 	public getUser(body) {
-		return this._http.get(this.url + 'getUsuario/'+body)
+		return this._http.get(this.url + 'getUsuario/'+ body)
 			.map(res => res.json());
 	}// getUser
 
 
 	public newUser(body) {
-		return this._http.post(this.url + 'newUsuario', body)
+		let json = JSON.stringify(body);
+		let params = 'json=' + json;
+		let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
+		return this._http.post(this.url + 'newUsuario',  params, { headers: headers })
 			.map(res => res.json());
 	}// newUser
 

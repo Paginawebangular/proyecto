@@ -20,8 +20,8 @@
 
 					<div class="botones" *ngIf="confirmado != producto.id">
 						<a [routerLink]="['/producto', producto.id]" class="btn btn-md btn-primary">Ver mas info</a>
-						<a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning">Editar coche</a>
-						<a (click)="borrarConfirm(producto.id)" class="btn btn-md btn-danger">Coche vendido</a>
+						<a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning" *ngIf="esUser">Editar coche</a>
+						<a (click)="borrarConfirm(producto.id)" class="btn btn-md btn-danger" *ngIf="esUser">Coche vendido</a>
 					</div>
 
 					<div class="seguro" *ngIf="confirmado == producto.id">

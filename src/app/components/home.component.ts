@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent{
     public titulo: string;
 
+    
     constructor() {
         this.titulo = "Bienvenido a Concesionario Rodríguez, la mejor web para encontrar tu coche ideal al mejor precio.";
     }

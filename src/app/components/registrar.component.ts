@@ -1,49 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
+import { Usuario } from '../models/usuario';
 
 @Component({
     selector: 'registrar',
-    templateUrl: '../views/registrar.html'
+    templateUrl: '../views/registrar.html',
+	providers: [ProductoService]
 })
 export class RegistrarComponent {
-    private _productoService: ProductoService;
-    public usuario: string;
-    public pass: string;
-    public name: string;
+    public usuario: Usuario;
     public msgError: string;
     public nologin: boolean;
     public norellene: boolean;
 
-    constructor(private router: Router) {
-        this.usuario = '';
-        this.pass = '';
-        this.name = '';
+    constructor(private router: Router,
+        private _productoService: ProductoService) {
+        this.usuario = new Usuario('','','');
         this.msgError = '';
         this.nologin = false;
         this.norellene = false;
     }
 
     registrar() {
+        this.nologin = false;
         let usuTrue, passTrue, nameTrue;
 
-        this.usuario === '' || this.usuario === undefined ? usuTrue = false : usuTrue = true;
-        this.pass === '' || this.pass === undefined ? passTrue = false : passTrue = true;
-        this.name === '' || this.name === undefined ? nameTrue = false : nameTrue = true;
+        this.usuario.user === '' || this.usuario.user === undefined ? usuTrue = false : usuTrue = true;
+        this.usuario.pass === '' || this.usuario.pass === undefined ? passTrue = false : passTrue = true;
+        this.usuario.nombre === '' || this.usuario.nombre === undefined ? nameTrue = false : nameTrue = true;
 
 
         if (usuTrue && passTrue && nameTrue) {
-            const body = {
-                'user': this.usuario,
-                'pass': this.pass,
-                'nombre': this.name
-            };
-           
-            this._productoService.newUser(body).subscribe(
+            this._productoService.newUser(this.usuario).subscribe(
                 response => {
                     
                     if (response.status === 'success') {
-                     this.router.navigate(['/crear-producto']);
+                        sessionStorage.setItem('usu', this.usuario.user);
+                     this.router.navigate(['/home']);
                     } else {
                         this.nologin = true;
                     }
