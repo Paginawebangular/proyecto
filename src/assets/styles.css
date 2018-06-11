@@ -1,42 +1,44 @@
 #content{
     margin-top:30px;
-    border:2px solid white;
-    border-radius: 2px;
-    background: white;
-    box-shadow: 0px 2px 3px gray;
+    border:10px solid black;
+    border-radius: 10px;
+    background-image: url(http://dissenyaweb.com/blog/diseno_web/wp-content/uploads/large-background.jpg);
+    box-shadow: 0px 2px 30px gray;
     padding: 0px;
     overflow: hidden;
 
 }
 #header{
-    background: #E03137;
+    background: #4c3424;
     color: white;
     margin: 0px;
-    height: 100px;
+    height: 90px;
     line-height: 90 px;
+    text-align: center;
+    text-shadow: gray;
 }
 
 #header h1{
     display: block;
     line-height: 51px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
 } 
 
 #nav {
     padding: 0px;
     margin: 0px;
-    background: rgba(224, 49, 55, 0.67);
+    background: #4c3424;
 }
 #nav ul {
     margin: 0px;
     list-style: none;
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 #nav ul li {
     float: left;
-    margin-right: 20px;
+    margin-right: 57px;
 }
 
 #nav ul li a{
@@ -44,6 +46,8 @@
     height: 30px;
     display: block;
     line-height: 29px;
+    font-size: 20px;
+    font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
     transition: all 300ms;
@@ -52,13 +56,13 @@
 
 #nav ul li a:hover{
     text-decoration: none;
-    background: #E03137;
+    background: rgb(49, 224, 142);
 
 }
 
 .activado{
     text-decoration: none !important;
-    border-bottom: 5px solid yellow !important;
+    border-bottom: 5px solid rgb(255, 0, 0) !important;
 
 }
 
@@ -109,10 +113,54 @@
 }
 
 
+.periodico{
+    background-color: #E4E0DF;
+}
 
 
+.h2home {
+    color: #4c3424;
+    padding-left: 20px;
+    font-size: 48px;
+    font-weight: bold;
 
+  
+}
 
+.phome{
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+ 
+}
+
+.aaa{
+    border: red 5px solid;
+    float: right;
+    font-size: 40px;
+}
+
+.divlogin{
+    background-color: yellow;
+}
+
+.bodindex{
+    background-color: grey;
+}
+
+.thumbnail{
+    
+    background-image: url(https://i.pinimg.com/originals/ec/10/89/ec10892aa68b36707fdfb4348f9736a3.jpg);
+    border:6px solid black;
+    border-radius: 30px;
+
+}
+
+.modelform{
+    border:6px solid black;
+    border-radius: 30px;
+    background-color: grey;
+}
 
 
 
@@ -249,4 +297,8 @@
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+.addMargin {
+    margin-top: 15px;
 }

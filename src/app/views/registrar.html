@@ -1,0 +1,18 @@
+<div class="col-lg-8 col-lg-offset-1">
+  <h1>Rellene todos los campos para crear una nueva cuenta</h1>
+  <div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    
+    <div class="form-signin">
+      <input id="inputNombre" [(ngModel)]="name" class="form-control addMargin" placeholder="Nombre" required autofocus>
+      <input id="inputUsuario" class="form-control addMargin" [(ngModel)]="usuario" placeholder="Usuario" required >
+      <input type="password" id="inputPassword" [(ngModel)]="pass" class="form-control addMargin" placeholder="Contraseña" required>
+      <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="registrar()">Crear Cuenta</button>
+      <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="atras()">Atrás</button>
+      <span class="alert-danger" *ngIf="nologin"  id="error">*Los datos no son validos. Reviselos</span>
+      <span class="alert-danger" *ngIf="norellene"  id="error">*Rellene todos los campos</span>
+    </div>
+    
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <div *ngIf="!producto">
         <p>Cargando producto...</p>
 </div>
-
+<br/><br/><br/><br/><br/>
 <div class="row" *ngIf="producto">
     <div class="col-lg-3" *ngIf="producto.imagen">
         <br/>
@@ -10,8 +10,15 @@
         </div>
 <div class="col-lg-8">
         <h3>{{producto.nombre}}</h3>
-        <p><strong>{{producto.precio}}</strong></p>
+        <p><strong>{{producto.precio}} €</strong></p>
         <p>{{producto.descripcion}}</p>
+<br/>
+        <div class="botones" *ngIf="confirmado != producto.id">
+                <a [routerLink]="['/productos']" class="btn btn-md btn-success">Volver a listado de coches</a>
+                <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning">Editar coche</a>
+                
+        </div>
+
 </div>
 </div>
 

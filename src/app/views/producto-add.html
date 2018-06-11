@@ -1,17 +1,17 @@
-<h2>{{titulo}} </h2>
-<hr/>
+<br/><br/><br/><br/><br/><h2>{{titulo}} </h2>
+
 
 <form #formProducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-2" id="form-producto">
     <label>
-        Marca
-        <span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">La marca es obligatorio</span>
+        Modelo
+        <span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El modelo es obligatorio</span>
     </label>
-    <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required />
-    <br/>
+    <input id="modelform" type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required />
+    <br/> 
 
     <label>
-        Modelo
-        <span *ngIf="!descripcion.valid && descripcion.touched" class="label label-danger">El modelo es obligatorio</span>
+        Descripcion
+        <span *ngIf="!descripcion.valid && descripcion.touched" class="label label-danger">La descripción es obligatorio</span>
     </label>
     <textarea type="text" #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" class="form-control" required ></textarea><br/>
 
@@ -19,7 +19,7 @@
         Precio
         <span *ngIf="!precio.valid && precio.touched" class="label label-danger">El precio no es correcto</span>
     </label>
-    <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+"/><br/>
+    <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required/><br/>
 
     <label>Imagen</label>
     <input type="file" class="form-control"(change)="fileChangeEvent($event)" />

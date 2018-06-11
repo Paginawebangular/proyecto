@@ -3,60 +3,64 @@ import { RouterModule, Router } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
 
 @Component({
-    selector: 'login',
-    templateUrl: '../views/login.html'
+    selector: 'registrar',
+    templateUrl: '../views/registrar.html'
 })
-export class LoginComponent {
+export class RegistrarComponent {
     private _productoService: ProductoService;
     public usuario: string;
     public pass: string;
+    public name: string;
     public msgError: string;
-    public nouser: boolean;
-    public nopass: boolean;
     public nologin: boolean;
+    public norellene: boolean;
 
     constructor(private router: Router) {
         this.usuario = '';
         this.pass = '';
+        this.name = '';
         this.msgError = '';
-        this.nouser = false;
-        this.nopass = false;
         this.nologin = false;
+        this.norellene = false;
     }
 
-    login() {
-        let usuTrue, passTrue;
+    registrar() {
+        let usuTrue, passTrue, nameTrue;
 
         this.usuario === '' || this.usuario === undefined ? usuTrue = false : usuTrue = true;
         this.pass === '' || this.pass === undefined ? passTrue = false : passTrue = true;
+        this.name === '' || this.name === undefined ? nameTrue = false : nameTrue = true;
 
 
-        if (usuTrue && passTrue) {
-            console.log('aa');
-            this._productoService.getProducto(this.usuario).subscribe(
+        if (usuTrue && passTrue && nameTrue) {
+            const body = {
+                'user': this.usuario,
+                'pass': this.pass,
+                'nombre': this.name
+            };
+           
+            this._productoService.newUser(body).subscribe(
                 response => {
+                    
                     if (response.status === 'success') {
-                        if (response.data.pass === this.pass) {
-                            this.router.navigate(['/crear-producto']);
-                        } else {
-                            this.nopass = true;
-                        }
+                     this.router.navigate(['/crear-producto']);
                     } else {
-                        this.nouser = true;
+                        this.nologin = true;
                     }
                 },
                 error => {
-                    this.nouser = true;
+                    this.nologin = true;
+                  
                 }
             );
 
         } else {
-            this.nologin = true;
+            this.norellene = true;
         }
     }
 
-    registrar() {
-        this.router.navigate(['/registrar']);
+    atras() {
+        this.router.navigate(['/login']);
     }
 }
 
