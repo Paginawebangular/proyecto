@@ -9,13 +9,12 @@
             class="producto-imagen"/>
         </div>
 <div class="col-lg-8">
-        <h3>{{producto.nombre}}</h3>
-        <p><strong>{{producto.precio}} €</strong></p>
-        <p>{{producto.descripcion}}</p>
+        <h1>{{producto.nombre}}</h1>
+        <h3><strong>{{producto.precio}} €</strong></h3>
+        <h3>{{producto.descripcion}}</h3>
 <br/>
         <div class="botones" *ngIf="confirmado != producto.id">
                 <a [routerLink]="['/productos']" class="btn btn-md btn-success">Volver a listado de coches</a>
-                <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning">Editar coche</a>
                 
         </div>
 

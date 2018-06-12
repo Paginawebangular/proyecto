@@ -62,7 +62,7 @@
 
 .activado{
     text-decoration: none !important;
-    border-bottom: 5px solid rgb(255, 0, 0) !important;
+    border-bottom: 5px solid white !important;
 
 }
 
@@ -129,14 +129,14 @@
 
 .phome{
     padding-left: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
  
 }
 
 .aaa{
-    border: red 5px solid;
     float: right;
+    color:#4c3424;
     font-size: 40px;
 }
 
@@ -162,6 +162,12 @@
     background-color: grey;
 }
 
+.imagenn{
+    border:6px solid black;
+    text-align: center;
+    border-radius: 145px;
+   
+}
 
 
 
@@ -170,8 +176,8 @@
 /*Estilos del login*/
 
 .card-container.card {
-    max-width: 350px;
-    padding: 40px 40px;
+    max-width: 450px;
+    padding: 20px 40px;
 }
 
 .btn {

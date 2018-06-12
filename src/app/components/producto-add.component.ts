@@ -21,7 +21,7 @@ export class ProductoAddComponent{
 		private _route: ActivatedRoute,
 		private _router: Router
 	){
-		this.titulo = 'Añadir un nuevo coche';
+		this.titulo = 'Ponga su coche a la venta';
 		this.producto = new Producto(0,'','',0,'');
 	}
 
