@@ -14,13 +14,13 @@ export class HomeComponent{
 		private router: Router
     ) {
         this.titulo = "Bienvenido a Concesionario Rodríguez, la mejor web para encontrar tu coche ideal al mejor precio.";
+        sessionStorage.setItem('btn','');
     }
     ngOnInit () {
         console.log('Se ha cargado home.component.ts');
     }
     entrar(){
         if (sessionStorage.getItem('puede') === 's'){
-            sessionStorage.setItem('btn','c');
             this.router.navigate(['/crear-producto']);
         } else {
             sessionStorage.setItem('btn','l');
