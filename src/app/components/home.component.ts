@@ -20,8 +20,10 @@ export class HomeComponent{
     }
     entrar(){
         if (sessionStorage.getItem('puede') === 's'){
+            sessionStorage.setItem('btn','c');
             this.router.navigate(['/crear-producto']);
         } else {
+            sessionStorage.setItem('btn','l');
             this.router.navigate(['/login']);
         }
     }

@@ -26,6 +26,7 @@ export class LoginComponent {
     }
 
     login() {
+        let logado = false;
         this.nopass = false;
         this.nouser = false;
         let usuTrue, passTrue;
@@ -40,7 +41,8 @@ export class LoginComponent {
                     if (response.status === 'success') {
                         if (response.data.pass === this.pass) {
                             location.href=location.href;
-                            sessionStorage.setItem('usu', this.usuario);                           
+                            sessionStorage.setItem('usu', this.usuario);   
+                            logado = true;                        
                         } else {
                             this.nopass = true;
                         }
@@ -56,7 +58,12 @@ export class LoginComponent {
         } else {
             this.nologin = true;
         }
-        this.router.navigate(['/home']); 
+
+    if (sessionStorage.getItem('btn') === 'l' && logado){
+        this.router.navigate(['/crear-producto']);
+    }else{
+        this.router.navigate(['/home']);
+    }
     }
 
 }
